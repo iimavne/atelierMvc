@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <!-- <link rel='stylesheet' type='text/css' href='style.css'> -->
+    {% block css %} {% endblock %}
+    <title>{% block title %}Yabon ! - Les catégories de recettes {% endblock %}</title>
+</head>
+<body class="container">   
+
+    
+    <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php">Yabontiap v1</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link {% if menu=='categories' %} active {% endif %}" aria-current="page" href="index.php">Catégories</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link {% if menu=='recettes'%} active {% endif %}" href="recettes.php">Recettes</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link {% if menu=='recettes_tableau'%} active {% endif %}" href="recettes_tableau.php">Recette_tableau</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link {% if menu=='categories_tableau'%} active {% endif %}" href="categories_tableau.php">Catégories tableau</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+   
+    <footer class="text-body-secondary py-5">
+            <p class="mb-1">Ce site est un contre exemple. Il montre ce qu'il ne faut pas faire </p>
+            <p><a href="licence.php">Les licences des images</a></p>
+    </footer>
+        {% block script %} {% endblock %}
+</body>
+</html>
+
+
+

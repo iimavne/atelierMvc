@@ -1,0 +1,31 @@
+
+{% extends 'base_template.html.twig' %}
+{% block title %}Les recettes - YabonTiap !{% endblock %}
+
+    
+
+    
+    
+{% block content %}
+    <main>
+        <h1>Yabon !</h1>
+
+        {# Les cartes #}
+            <div id="zone_cartes" class="row row-cols-3">
+
+            {% for recette in recettes %}           
+
+                <!--Les cartes-->
+                <a href="recette.php?id_recette={{recette.id}}" class="col mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="image/{{recette.image}}" class="card-img-top" alt="">
+                        <div class="card-body bg-primary">
+                        <h5>{{recette.nom}}</h5>
+                        </div>
+                    </div>
+                </a>                
+            {% endfor %}
+
+        </div>
+    </main>
+{% endblock %}

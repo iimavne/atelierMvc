@@ -1,0 +1,28 @@
+{% extends 'base_template.html.twig' %}
+    
+    {% block title %}Yabon ! - Les catégories de recettes</title> {% endblock %}
+    
+    {% block content %}
+    <main>
+        <h1 class="mycolor">Les catégories de recettes</h1>
+
+        <div id="zone_cartes" class="row row-cols-3">
+                {% for categorie in categories %}
+
+                <!--Les cartes-->
+                <a href="recettes.php?id_categorie={{categorie.id}}" class="col mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="image/{{categorie.image}}" class="card-img-top" alt="">
+                        <div class="card-body bg-primary">
+                            <h5>{{categorie.nom}}</h5>
+                        </div>
+                    </div>
+                </a>                
+
+            {% endfor %}
+
+        </div>
+    </main>
+    
+{% endblock %}
+

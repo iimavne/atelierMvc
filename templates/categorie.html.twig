@@ -1,0 +1,16 @@
+{% extends 'base_template.html.twig' %}
+    {% block title %}Yabontiap ! - {{categorie.nom}}{% endblock %}
+
+    {% block content %}
+        <main>
+            <h1>La catégorie : {{categorie.nom}}</h1>
+    <!--                Affichage de la description de la recette et de l'image-->
+            <div class="row">
+                <div class="col-md-9">
+                    <img src="image/{{categorie.image}}"  alt="">
+                </div>            
+            </div>            
+        </main>
+    {% endblock %}
+
+ 

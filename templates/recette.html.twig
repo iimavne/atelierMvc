@@ -1,0 +1,32 @@
+{% extends 'base_template.html.twig' %}
+    {% block title %}Yabontiap ! - {{recette.0.nom}}{% endblock %}
+
+{% block content %}
+    <main>
+        <h1>{{recette.0.nom}}</h1>
+<!--                Affichage de la description de la recette et de l'image-->
+        <div class="row">
+            <div class="col-md-9">
+                <img src="image/{{recette.0.image}}"  alt="">
+                <p>{{recette.0.description}}</p>
+
+
+            </div>
+            <div class="col-md-3">
+                <h6>Ingrédients</h6>
+
+                <ul>
+    
+
+                    {% for ingredient in recette %}
+                        <li>{{ingredient.ingredient_nom}} - {{ingredient.quantite}}</li>
+                    {% endfor %}
+
+                    
+
+                </ul>
+            </div>
+        </div>        
+    </main>
+
+{% endblock %}
